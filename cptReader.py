@@ -16,6 +16,15 @@ from pynput.keyboard import Key, Controller, Listener
 engine = pyttsx3.init()
 keyboard = Controller()
 
+def onWord(*args, **kwargs):
+   print (self, args, kwargs)
+   if location > 10:
+      engine.stop()
+
+engine = pyttsx3.init()
+engine.connect('started-word', onWord)
+engine.say('The quick brown fox jumped over the lazy dog.')
+engine.runAndWait()
 
 def read():
     old_clipboard = clipboard.paste()
